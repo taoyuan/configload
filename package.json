@@ -1,6 +1,6 @@
 {
   "name": "@tib/configload",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Load configuration file in various formats: yaml, json5, json, toml and js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
