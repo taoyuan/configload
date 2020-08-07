@@ -1,7 +1,7 @@
 {
   "name": "@tib/configload",
   "version": "0.1.0",
-  "description": "Load configuration file in various formats: yaml, json5, json, toml.",
+  "description": "Load configuration file in various formats: yaml, json5, json, toml and js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "engines": {
@@ -58,7 +58,20 @@
   "optionalDependencies": {
     "@iarna/toml": "^2.2.5"
   },
-  "keywords": [],
+  "keywords": [
+    "config",
+    "configure",
+    "settings",
+    "options",
+    "laod",
+    "read",
+    "json",
+    "json5",
+    "yaml",
+    "yml",
+    "toml",
+    "js"
+  ],
   "files": [
     "README.md",
     "dist",
