@@ -11,13 +11,14 @@ cache:
 
 before_script:
   - npm ci
-  - npm run postinstall
-  - npm run build
 
 test:
   script:
     - npm run test:ci
-    - npm run coverage:nyc:text
+
+coverage:
+  script:
+    - npm run coverage
   coverage: /Statements\s+:\s(\d+.?\d+)%/
   artifacts:
     when: always
