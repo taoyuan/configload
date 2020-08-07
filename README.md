@@ -54,7 +54,7 @@ load config file async
 **Params**
 
 - `filepath: string` - path of the file to read.
-- `options: LoadOptions` - [options](#LoadOptions) to pass to loader
+- `options: LoadOptions` - [options](#loadoptions) to pass to loader
 - `returns: Promise<Object>` - promised JSON
 
 **Example**
@@ -75,7 +75,7 @@ load config file sync
 **Params**
 
 - `filepath: string` - path of the file to read.
-- `options: LoadOptions` - [options](#LoadOptions) to pass to loader
+- `options: LoadOptions` - [options](#loadoptions) to pass to loader
 - `returns: Object` - JSON
 
 **Example**
@@ -94,7 +94,7 @@ Async auto detect config file with the `filepath` and load the config file
 **Params**
 
 - `filepath: string` - path of the file to read.
-- `options: LoadOptions` - [options](#LoadOptions) to pass to loader
+- `options: LoadOptions` - [options](#loadoptions) to pass to loader
 - `returns: Promise<Object>` - promised JSON
 
 **Example**
@@ -115,7 +115,7 @@ Sync auto detect config file with the `filepath` and load the config file
 **Params**
 
 - `filepath: string` - path of the file to read.
-- `options: LoadOptions` - [options](#LoadOptions) to pass to loader
+- `options: LoadOptions` - [options](#loadoptions) to pass to loader
 - `returns: Object` - JSON
 
 **Example**
