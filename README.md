@@ -55,7 +55,8 @@ detect config file with lang or default loaders
 
 - `file: string` - path of the file or prefix to read.
 - `lang?: string` - force using specified lang loader.
-- `return: {file: string, lang: string, loader: Loader} | undefined` - detected result
+- `return: {file: string, lang: string, loader: Loader} | undefined` - detected
+  result
 
 **Example**
 
@@ -69,11 +70,11 @@ import {detect} from '@tib/configload';
 //   ├── foo.json
 //   └── foo.toml
 
-console.log(detect('foo'));               // => {file: '<..>/foo.yml', lang: 'yaml', loader: <YamlLoader>}
-console.log(detect('foo.json'));          // => {file: '<..>/foo.json', lang: 'json', loader: <JsonLoader>}
-console.log(detect('foo', 'toml'));       // => {file: '<..>/foo.toml', lang: 'toml', loader: <TomlLoader>}
-console.log(detect('foo', 'js'));         // => undefied  
-console.log(detect('foo.json', 'toml'));  // => undefied
+console.log(detect('foo')); // => {file: '<..>/foo.yml', lang: 'yaml', loader: <YamlLoader>}
+console.log(detect('foo.json')); // => {file: '<..>/foo.json', lang: 'json', loader: <JsonLoader>}
+console.log(detect('foo', 'toml')); // => {file: '<..>/foo.toml', lang: 'toml', loader: <TomlLoader>}
+console.log(detect('foo', 'js')); // => undefied
+console.log(detect('foo.json', 'toml')); // => undefied
 ```
 
 ### load(filepath: string, options: LoadOptions = {}): Promise<any>
