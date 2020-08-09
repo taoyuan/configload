@@ -1,6 +1,3 @@
-import * as fs from 'fs';
-import * as path from 'path';
-import {Loader} from '../types';
 import {json} from './json';
 import {yaml} from './yaml';
 import {toml} from './toml';
@@ -25,42 +22,5 @@ export function findLoader(options: FindLoaderOptions) {
   }
   if (extension) {
     return loaders.find(l => l.extensions.includes(extension.toLowerCase()));
-  }
-}
-
-export interface Detected {
-  file: string;
-  loader: Loader;
-}
-
-export function detect(file: string, lang?: string): Detected | undefined {
-  const loader = findLoader({
-    lang,
-    extension: path.extname(file),
-  });
-
-  if (!loader && lang) {
-    return;
-  }
-
-  if (loader) {
-    if (fs.existsSync(file)) {
-      return {file, loader};
-    }
-    for (const ext of loader.extensions) {
-      const f = file + ext;
-      if (fs.existsSync(f)) {
-        return {file: f, loader};
-      }
-    }
-  } else {
-    for (const l of loaders) {
-      for (const ext of l.extensions) {
-        const f = file + ext;
-        if (fs.existsSync(f)) {
-          return {file: f, loader: l};
-        }
-      }
-    }
   }
 }

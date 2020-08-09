@@ -1,13 +1,13 @@
 import path from 'path';
+import * as fs from 'fs';
 import {
-  detect,
   findLoader,
   JsLoadOptions,
   JsonLoadOptions,
   TomlLoadOptions,
   YamlLoadOptions,
 } from './loaders';
-import * as fs from 'fs';
+import {detect} from './detect';
 
 export type LoadOptions = {lang?: string} & (
   | JsonLoadOptions
