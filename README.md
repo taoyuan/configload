@@ -47,6 +47,35 @@ console.log(autoLoadSync('foo'));
 
 ## API
 
+### detect(file: string, lang?: string): {file: string, lang: string, loader: Loader} | undefined
+
+detect config file with lang or default loaders
+
+**Params**
+
+- `file: string` - path of the file or prefix to read.
+- `lang?: string` - force using specified lang loader.
+- `return: {file: string, lang: string, loader: Loader} | undefined` - detected result
+
+**Example**
+
+```ts
+import {detect} from '@tib/configload';
+
+// Suppose we have the following files
+//
+// ├─┬ config
+//   ├── foo.yml
+//   ├── foo.json
+//   └── foo.toml
+
+console.log(detect('foo'));               // => {file: '<..>/foo.yml', lang: 'yaml', loader: <YamlLoader>}
+console.log(detect('foo.json'));          // => {file: '<..>/foo.json', lang: 'json', loader: <JsonLoader>}
+console.log(detect('foo', 'toml'));       // => {file: '<..>/foo.toml', lang: 'toml', loader: <TomlLoader>}
+console.log(detect('foo', 'js'));         // => undefied  
+console.log(detect('foo.json', 'toml'));  // => undefied
+```
+
 ### load(filepath: string, options: LoadOptions = {}): Promise<any>
 
 load config file async
